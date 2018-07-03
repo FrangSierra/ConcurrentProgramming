@@ -17,10 +17,10 @@ fun main(args: Array<String>) {
     clients.forEach { it.shopping() }
 }
 
-val clients = mutableListOf<Customer>()
-var currentNumberMachine = 0
+private val clients = mutableListOf<Customer>()
+private var currentNumberMachine = 0
 
-data class Customer(private val id: Int,
+private data class Customer(private val id: Int,
                     private var ticket: Int = 0,
                     private var pickingNumber: Boolean = false) : Thread() {
 

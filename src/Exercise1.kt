@@ -47,7 +47,7 @@ fun main(args: Array<String>) {
  * @param p1 First list of instructions.
  * @param p2 Second list of instructions.
  */
-fun printPermutation(p1: Process, p2: Process, accumulator: Int = 0) {
+private fun printPermutation(p1: Process, p2: Process, accumulator: Int = 0) {
     if (accumulator == p1.size) {  //stop condition for the recursion
         println("$p1")
         return
@@ -67,7 +67,7 @@ fun printPermutation(p1: Process, p2: Process, accumulator: Int = 0) {
  * n! = n × (n-1)!
  * @param n The number to calculate the factorial.
  */
-tailrec fun factorial(n: Int, accumulator: Int = 1): Int {
+private tailrec fun factorial(n: Int, accumulator: Int = 1): Int {
     if (n < 0) throw Exception("No negative numbers pls")
     return if (n == 1) accumulator else factorial(n-1, accumulator *n)
 }
@@ -91,7 +91,7 @@ fun combination(n: Int, m: Int): Int {
     }
 }
 
-typealias Process = MutableList<Instruction>
-data class Instruction(private val instruction: String){
+private typealias Process = MutableList<Instruction>
+private data class Instruction(private val instruction: String){
     override fun toString(): String = instruction
 }
